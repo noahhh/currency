@@ -14,7 +14,7 @@ class Currency
     end
   end
 
-  def add_currency(*item_to_add)
+  def add_currency(item_to_add)
     if @code == item_to_add.code
     @value += item_to_add.value
   else
@@ -22,7 +22,7 @@ class Currency
     end
   end
 
-  def add_currency(*item_to_add)
+  def subtract_currency(item_to_add)
     if @code == item_to_add.code
     @value -= item_to_add.value
   else
