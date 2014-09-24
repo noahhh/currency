@@ -7,7 +7,9 @@ class CurrencyTest < MiniTest::Unit::TestCase
     refute_nil currency
   end
 
-  # def test_different_currencies_equal_eachother
-  #
-  # end
+  def test_different_currency_objects_equal_eachother
+    amount = Currency.new(9, "EUR")
+    different_amount = Currency.new(9, "EUR")
+    assert_equal amount, different_amount
+  end
 end
