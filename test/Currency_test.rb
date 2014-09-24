@@ -20,4 +20,16 @@ class CurrencyTest < MiniTest::Unit::TestCase
       amount1.code == amount2.code
       assert_equal 11, result
   end
+
+  def test_subtract_currency_from_same_coded_currency
+    amount1 = Currency.new(9, "EUR")
+    amount2 = Currency.new(2, "EUR")
+    if amount1.code == amount2.code
+      result = amount1.value - amount2.value
+      if result < 0
+        raise "You can't have negative monies!"
+      end
+    end
+    assert_equal 7, result
+  end
 end

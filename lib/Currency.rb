@@ -21,4 +21,12 @@ class Currency
     return nil
     end
   end
+
+  def add_currency(*item_to_add)
+    if @code == item_to_add.code
+    @value -= item_to_add.value
+  else
+    return nil
+    end
+  end
 end
