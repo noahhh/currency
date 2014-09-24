@@ -12,4 +12,12 @@ class CurrencyTest < MiniTest::Unit::TestCase
     different_amount = Currency.new(9, "EUR")
     assert_equal amount, different_amount
   end
+
+  def test_add_currency_to_same_coded_currency
+      amount1 = Currency.new(9, "EUR")
+      amount2 = Currency.new(2, "EUR")
+      result = amount1.value + amount2.value if
+      amount1.code == amount2.code
+      assert_equal 11, result
+  end
 end
