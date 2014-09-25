@@ -1,3 +1,6 @@
+class DifferentCurrencyCodeError < RuntimeError
+end
+
 class Currency
   include Comparable
   attr_reader :value, :code
@@ -15,11 +18,11 @@ class Currency
   end
 
   def add_currency(item_to_add)
-    if @code == item_to_add.code
+  if @code == item_to_add.code
     @value += item_to_add.value
   else
     return nil
-    end
+  end
   end
 
   def subtract_currency(item_to_add)
@@ -30,3 +33,9 @@ class Currency
     end
   end
 end
+#   def multiply_currency(item_to_m)
+#     if @code == item_
+#     Currency.new(new_amount, @value.code)
+#   end
+#
+# end
